@@ -2,10 +2,12 @@ package com.meli.meteoro.domain.model;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class Triangulation {
-    double [][] positions;
-    double [] distances;
-
-    public static final String EVENT_TRIANGULATION = "event.subscribe.triangulation";
+    List<Position> positions;
+    List<Double> distances;
 }
+
+
