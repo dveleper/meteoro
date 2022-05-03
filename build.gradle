@@ -20,6 +20,12 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.lemmingapex.trilateration:trilateration:1.0.2'
+
+	implementation 'org.reactivecommons:async-commons-rabbit-starter:1.0.4'
+	implementation 'org.reactivecommons:async-commons-starter:1.0.0-beta3'
+	implementation 'io.projectreactor:reactor-core:3.4.17'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

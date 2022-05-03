@@ -1,0 +1,26 @@
+##Spring Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /meteoro/api
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: meteoro
+  devtools:
+    add-properties: false
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+app:
+  async:
+    withDLQRetry: true
+    retryDelay: 5000
+    maxRetries: 3
+
+
