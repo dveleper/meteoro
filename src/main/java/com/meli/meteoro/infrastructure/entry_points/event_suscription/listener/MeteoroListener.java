@@ -1,8 +1,8 @@
 package com.meli.meteoro.infrastructure.entry_points.event_suscription.listener;
 
-import com.meli.meteoro.domain.model.repository.ParametersRabbitRepository;
-import com.meli.meteoro.infrastructure.entry_points.event_suscription.triangulation.TriangulationQuery;
-import com.meli.meteoro.infrastructure.entry_points.event_suscription.triangulation.TriangulationReply;
+import com.meli.meteoro.domain.usecase.TriangulationUseCase;
+import com.meli.meteoro.infrastructure.entry_points.event_suscription.triangulation.rabbit.TriangulationQuery;
+import com.meli.meteoro.infrastructure.entry_points.event_suscription.triangulation.rabbit.TriangulationReply;
 import lombok.RequiredArgsConstructor;
 import org.reactivecommons.async.api.HandlerRegistry;
 import org.reactivecommons.async.impl.config.annotations.EnableMessageListeners;
@@ -19,7 +19,7 @@ import static org.reactivecommons.async.api.HandlerRegistry.register;
 public class MeteoroListener {
 
     @Autowired
-    private ParametersRabbitRepository parametersRabbitRepository;
+    private TriangulationUseCase triangulationUseCase;
 
     @Bean
     public HandlerRegistry handleEventSubscriptions() {
@@ -28,6 +28,10 @@ public class MeteoroListener {
     }
 
     private Mono<TriangulationReply> getTriangulationResult(TriangulationQuery triangulationQuery) {
-        return Mono.just(parametersRabbitRepository.getPositionResult(triangulationQuery));
+        double[] position = triangulationUseCase.getPosition(triangulationQuery.getPositions(), triangulationQuery.getDistances());
+        return Mono.just(TriangulationReply
+                .builder()
+                .position(position)
+                .build());
     }
 }

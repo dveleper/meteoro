@@ -1,4 +1,4 @@
-package com.meli.meteoro.infrastructure.entry_points.event_suscription.triangulation;
+package com.meli.meteoro.infrastructure.entry_points.event_suscription.triangulation.rabbit;
 
 import com.meli.meteoro.domain.model.Position;
 import lombok.AllArgsConstructor;
