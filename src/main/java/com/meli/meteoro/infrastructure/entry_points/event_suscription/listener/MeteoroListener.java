@@ -1,6 +1,5 @@
 package com.meli.meteoro.infrastructure.entry_points.event_suscription.listener;
 
-import com.meli.meteoro.domain.model.repository.PositionRepository;
 import com.meli.meteoro.domain.usecase.TriangulationUseCase;
 import com.meli.meteoro.infrastructure.entry_points.event_suscription.triangulation.rabbit.TriangulationQuery;
 import com.meli.meteoro.infrastructure.entry_points.event_suscription.triangulation.rabbit.TriangulationReply;
