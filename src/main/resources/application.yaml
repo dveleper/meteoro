@@ -1,12 +1,12 @@
 ##Spring Configuration
 server:
-  port: 8092
+  port: 8099
   servlet:
     context-path: /meteoro/api
 
 spring:
   profiles:
-    active: dev
+    active: pdn
   application:
     name: meteoro
   devtools:
