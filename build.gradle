@@ -26,6 +26,8 @@ dependencies {
 	implementation 'org.reactivecommons:async-commons-starter:1.0.0-beta3'
 	implementation 'io.projectreactor:reactor-core:3.4.17'
 
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.8'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
