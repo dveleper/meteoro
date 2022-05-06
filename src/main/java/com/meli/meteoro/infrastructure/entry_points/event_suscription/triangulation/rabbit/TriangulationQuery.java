@@ -13,6 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TriangulationQuery {
-    List<Position> positions;
-    List<Double> distances;
+    private List<Position> positions;
+    private List<Double> distances;
 }
